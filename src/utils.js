@@ -1,7 +1,10 @@
 // general purpose utilities...
 
-export const assert = (value) => 
+export const assert = (value, msg = undefined) => 
 {
-	if ( !value ) throw new Error("Assertion Error: ", value);
+	let error = "Assertion Error (" + value + "):";
+	if (msg) error += " it failed an assertion test called ("  + msg + ")";
+
+	if ( !value ) throw new Error(error);
 	return value;
 }

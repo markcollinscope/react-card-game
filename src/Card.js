@@ -1,9 +1,16 @@
-// card, converts to numeric value in game.
-import * as uts from 'utils';
+import { assert } from './utils';
 
-export class Card 
+export default class Card 
 {
-	static values = {
+	// strictly not needed, but shows intent.
+	image = undefined;
+	value = undefined;
+	suit = undefined;
+	code = undefined; 
+
+	// Discuss placement of "values" here. 
+	// Should it be somewhere else? SRP?
+	static values = {	
 		"2": 2,
 		"3": 3,
 		"4": 4,
@@ -19,19 +26,15 @@ export class Card
 		"ACE": 11
 	};
 
+	numericValue = () => { return Card.values[this.value]; }
+
 	constructor(c)
 	{
-		this.image = uts.assert(c.image);
-        this.value = uts.assert(c.value);
-        this.suit = uts.assert(c.suit);
-        this.code = uts.assert(c.code);
+		this.image = assert(c.image);
+        this.value = assert(c.value);
+        this.suit = assert(c.suit);
+        this.code = assert(c.code);
 	}
 
-	image = () => this.image;
-	value = () => this.value;
-	suit = () => this.suit;
-	code = () => this.code;
-	numericValue = () => { return Card.values[this.value]; }
+	getImage() { return this.image; }
 }
-
-export default Card;

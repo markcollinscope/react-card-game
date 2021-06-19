@@ -1,0 +1,111 @@
+
+body {
+	background: yellow;
+}
+
+.vgap {
+	height: 1vw;
+}
+
+.cardpad {
+	padding: .3vw;
+}
+
+.cardwidth {
+	min-width: 2cm;
+	width: 10vw;
+	height: auto;
+}
+
+.flexhline {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.button {
+	border: solid 1px black;
+	background: yellow;
+	color: red;
+	font-size: 1.5vw;
+}
+
+.txtout {
+	margin: 1vw;
+	text-align: right;
+	font-size: 1.5vw;
+	color: blue;
+}
+
+/* ---- */
+
+.blue {
+	background: blue;
+}
+
+.red {
+	background: red;
+}
+
+.green {
+	background: green;
+}
+
+.cntr {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+/* 
+
+.mauto {
+	margin: auto;
+}
+
+.tac {
+	text-align: center;
+}
+
+.bred {
+	border: solid 3px red;
+}
+
+.sz {
+	width: 5cm;
+	height: 4cm;
+}
+
+.fullh {
+	height: 10cm;
+}
+
+.w65 {
+	width: 65%;
+}
+
+.w50 {
+	width: 50%;
+}
+
+.vw50 {
+	width: 50vw;
+	height: 50vh;
+}
+
+.icenter {
+	margin: auto;
+}
+
+.lsz {
+	width: 10cm;
+	height: 8cm;
+	position: relative;
+}
+
+.rel {
+	position: relative;
+}
+*/
