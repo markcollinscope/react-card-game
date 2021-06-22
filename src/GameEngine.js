@@ -48,8 +48,6 @@ export default class GameEngine {
 		let card = await this.deckAPI.drawCard();
 		this.cardHand.addCard(card);
 		this.gameTotal += this.getNumberValue(card);
-
-		console.log("GameEngine - New Card, total ", card, this.gameTotal);
 	}
 
 	isBust() {
