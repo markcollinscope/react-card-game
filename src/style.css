@@ -8,9 +8,9 @@ body {
 
 .card {
 	padding: .3vh;
-	min-width: 2cm;
-	width: 10vh;
-	height: auto;
+	width: auto;
+	min-height: 3cm;
+	height: 13vh;
 }
 
 .flex-horiz {
