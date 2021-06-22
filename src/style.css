@@ -1,6 +1,5 @@
-
 body {
-	background: yellow;
+	background: #007C89;
 }
 
 .vgap {
@@ -20,21 +19,26 @@ body {
 .flexhline {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
-}
-
-.button {
-	border: solid 1px black;
+	justify-content: left;
 	background: yellow;
-	color: red;
-	font-size: 1.5vw;
+	min-height: 15vw;
 }
 
-.txtout {
+.btn {
+	background: #6C63FF;
+	font-color: red;
+}
+
+.tar {
 	margin: 1vw;
 	text-align: right;
-	font-size: 1.5vw;
-	color: blue;
+	font-size: 1vw;
+	color: black;
+}
+
+.cntr {
+	display: flex;
+	justify-content: center;
 }
 
 /* ---- */
@@ -51,61 +55,3 @@ body {
 	background: green;
 }
 
-.cntr {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-}
-
-/* 
-
-.mauto {
-	margin: auto;
-}
-
-.tac {
-	text-align: center;
-}
-
-.bred {
-	border: solid 3px red;
-}
-
-.sz {
-	width: 5cm;
-	height: 4cm;
-}
-
-.fullh {
-	height: 10cm;
-}
-
-.w65 {
-	width: 65%;
-}
-
-.w50 {
-	width: 50%;
-}
-
-.vw50 {
-	width: 50vw;
-	height: 50vh;
-}
-
-.icenter {
-	margin: auto;
-}
-
-.lsz {
-	width: 10cm;
-	height: 8cm;
-	position: relative;
-}
-
-.rel {
-	position: relative;
-}
-*/

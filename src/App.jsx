@@ -1,70 +1,69 @@
+// Platform.
 import React from 'react';
-import './style.css';
 
-import Deck from './Deck';
-import Card from './Card';
+// Application
+import GameEngine from './GameEngine';
+
+// Interface
+import './style.css';
 import CardHandView from './CardHandView';
 import Button from './Button';
-import TxtOut from './TxtOut';
 
 class App extends React.Component {
-    deck = undefined;
+    game = undefined;
 
     constructor() {
         super();
-        this.state = { canRender: false, deckId: undefined, score: 0 };
-        this.deck = new Deck();
+        this.state = { canRender: false, runningScore: 0, highScore: 0, gameOver: true };
     }
 
     async componentDidMount() {
-        let id = await this.deck.newDeck();
-
-        this.setState({ canRender: true, deckId: id });
-        console.log("DID MOUNT: ", this.state.deckId);
-        await this.testDeck();
+        this.game = new GameEngine();
+        await this.doStartGame();
     }
 
-    testDeck = async () => {
-        const MAX=7;
-        let card = undefined;
-
-        console.log("testDeck - deckId: ", this.deck.id())
-
-        for (let i=0; i<MAX; i++) {
-            card = await this.deck.drawCard();
-            console.log("CARD: ", i, card);
-        }
+    doStartGame = async () => {
+        await this.game.start();
+        this.setState({ canRender: true, runningScore: 0, gameOver: false });
     }
 
-    handleDrawCardClick = () => {
+    doEndGame = async () => {
+        let ncards = this.game.getNumberCards() - 1;
+        let newHighScore = Math.max(this.state.highScore, ncards);
+        this.setState({highScore: newHighScore, gameOver: true});
+    }
+
+    handleDrawCardClick = async () => {
         console.log("Clicked");
+        await this.game.drawCard();
+
+        if (this.game.isBust())
+
+        this.setState({ runningScore: this.game.getTotal() })
     }
 
     render() {
-        console.log("Rendering - canRender: ", this.state.canRender);
-        
-        if (! this.state.canRender) {
-            return <div className="cntr"><TxtOut label="Loading"/></div>
+        let buttonLabel = "Another Game?"
+
+        if (!this.state.gameOver) {
+            buttonLabel = "Draw Card";
+        }
+
+        if (!this.state.canRender) {
+            return <p className="cntr">Loading...</p>;
         }
 
         return (
-            <div className="green" >
-                <TxtOut msg={ ": " + this.state.score }/>
+            <div>
+                <div style={{background: "azure"}}><p>debug:</p></div>
+
+                <p className="tar">High Score: {this.state.highScore} </p>
                 <div className="vgap"/>
-                <CardHandView cards = {[
-                        new Card ( { image: "https://deckofcardsapi.com/static/img/JS.png", value: " ", suit: " ", code: " "} ),
-                        new Card ( { image: "https://deckofcardsapi.com/static/img/JS.png", value: " ", suit: " ", code: " "} ),
-                        new Card ( { image: "https://deckofcardsapi.com/static/img/JS.png", value: " ", suit: " ", code: " "} ),
-                        new Card ( { image: "https://deckofcardsapi.com/static/img/JS.png", value: " ", suit: " ", code: " "} ),
-                        new Card ( { image: "https://deckofcardsapi.com/static/img/JS.png", value: " ", suit: " ", code: " "} ),
-                        new Card ( { image: "https://deckofcardsapi.com/static/img/JS.png", value: " ", suit: " ", code: " "} ),
-                        new Card ( { image: "https://deckofcardsapi.com/static/img/JS.png", value: " ", suit: " ", code: " "} ),
-                        new Card ( { image: "https://deckofcardsapi.com/static/img/JS.png", value: " ", suit: " ", code: " "} ),
-                    ]}
-                />
+                <CardHandView hand = { this.game.getHand() }/>
                 <div className="vgap"/>
-                <div className="flexhline">
-                    <Button label="Draw Card" onClick={this.handleDrawCardClick}/>
+                <p className="cntr"> Current Score: { this.state.runningScore }</p>
+                <div className="cntr">
+                    <Button className="button" label={buttonLabel} onClick={this.handleDrawCardClick}/>
                 </div>
             </div>
         );
@@ -72,4 +71,3 @@ class App extends React.Component {
 }
 
 export default App;
-

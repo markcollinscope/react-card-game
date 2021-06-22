@@ -1,18 +1,12 @@
-import Card from "./Card";
+
 
 export default class CardHand {
-
-	constructor(props) {
-  		super(props);
-  		this.cards = [];
-  		this.nCards = 0;
-	}
+	cardsInHand = [];
 
 	addCard = (c) => {
-		this.cards.push(c);
-		this.nCards++;
+		this.cardsInHand.push(c);
 	}
 
-	getCards = () => this.cards;
-	getNCards = () => this.nCards;
+	get cards() { return this.cardsInHand };
+	get nCards() { return this.cards.length; };
 }
