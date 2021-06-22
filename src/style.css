@@ -6,21 +6,17 @@ body {
 	height: 1vw;
 }
 
-.cardpad {
+.card {
 	padding: .3vw;
-}
-
-.cardwidth {
 	min-width: 2cm;
 	width: 10vw;
 	height: auto;
 }
 
-.flexhline {
+.flex-horiz {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: left;
-	background: yellow;
 	min-height: 15vw;
 }
 
@@ -41,17 +37,4 @@ body {
 	justify-content: center;
 }
 
-/* ---- */
-
-.blue {
-	background: blue;
-}
-
-.red {
-	background: red;
-}
-
-.green {
-	background: green;
-}
 

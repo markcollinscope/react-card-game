@@ -24,7 +24,7 @@ export default class DeckAPI
 	doChecks = ()  =>
 	{
 		if ( this.deckId === undefined )
-			throw new Error("DeckOfCard - must call newDeck()");
+			throw new Error("DeckAPI - must call newDeck()");
 	}
 
 	newDeck = async () =>
@@ -48,8 +48,7 @@ export default class DeckAPI
 		let jsonCards = await this.doApiFetchJson(this.deckId + DRAWCARD);
 		assert( this.deckId === jsonCards.deck_id, "same deck" );
 
-		this.lastCard = new Card (jsonCards.cards[0]);
-		return this.lastCard;
+		return new Card (jsonCards.cards[0]);
 	}
 }
 

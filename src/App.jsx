@@ -7,14 +7,13 @@ import GameEngine from './GameEngine';
 // Interface
 import './style.css';
 import CardHandView from './CardHandView';
-import Button from './Button';
 
 class App extends React.Component {
     game = undefined;
 
     constructor() {
         super();
-        this.state = { canRender: false, runningScore: 0, highScore: 0, gameOver: true };
+        this.state = { canRender: false, runningScore: 0, highScore: 0, gameOver: false };
     }
 
     async componentDidMount() {
@@ -34,36 +33,40 @@ class App extends React.Component {
     }
 
     handleDrawCardClick = async () => {
-        console.log("Clicked");
-        await this.game.drawCard();
+        if (this.state.gameOver) {
+            await this.doStartGame();
+        }
+        else {
+            await this.game.drawCard();
+            let isBust = this.game.isBust();
 
-        if (this.game.isBust())
-
-        this.setState({ runningScore: this.game.getTotal() })
+            if (isBust) this.doEndGame();
+            this.setState({ runningScore: this.game.getTotal(), gameOver: isBust })
+        }
     }
 
     render() {
-        let buttonLabel = "Another Game?"
-
-        if (!this.state.gameOver) {
-            buttonLabel = "Draw Card";
-        }
-
         if (!this.state.canRender) {
             return <p className="cntr">Loading...</p>;
         }
 
+        let buttonLabel = "DRAW CARD"
+        let currentScore = this.state.runningScore; 
+
+        if (this.state.gameOver) {
+            buttonLabel = "BUST - TRY AGAIN";
+            currentScore = "BUST"
+        }
+
         return (
             <div>
-                <div style={{background: "azure"}}><p>debug:</p></div>
-
                 <p className="tar">High Score: {this.state.highScore} </p>
                 <div className="vgap"/>
                 <CardHandView hand = { this.game.getHand() }/>
                 <div className="vgap"/>
-                <p className="cntr"> Current Score: { this.state.runningScore }</p>
+                <p className="cntr"> Current Score: { currentScore }</p>
                 <div className="cntr">
-                    <Button className="button" label={buttonLabel} onClick={this.handleDrawCardClick}/>
+                    <button type="button" className="btn" onClick={this.handleDrawCardClick}>{buttonLabel}</button>
                 </div>
             </div>
         );

@@ -34,7 +34,7 @@ export default class GameEngine {
 			throw Error(`Must call start() before other methods on GameEngine (${this.cardHand}, ${this.gameTotal})`);
 	}
 
-	doNumberValue = (c) => { return GameEngine.values[c.value]; }
+	getNumberValue = (c) => { return GameEngine.values[c.value]; }
 
 	start = async () => {
 		await this.deckAPI.newDeck();
@@ -47,7 +47,7 @@ export default class GameEngine {
 
 		let card = await this.deckAPI.drawCard();
 		this.cardHand.addCard(card);
-		this.gameTotal += this.doNumberValue(card);
+		this.gameTotal += this.getNumberValue(card);
 
 		console.log("GameEngine - New Card, total ", card, this.gameTotal);
 	}
