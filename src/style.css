@@ -3,13 +3,13 @@ body {
 }
 
 .vgap {
-	height: 1vw;
+	height: 1vh;
 }
 
 .card {
-	padding: .3vw;
+	padding: .3vh;
 	min-width: 2cm;
-	width: 10vw;
+	width: 10vh;
 	height: auto;
 }
 
@@ -17,7 +17,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: left;
-	min-height: 15vw;
+	min-height: 20vh;
 }
 
 .btn {
@@ -26,7 +26,7 @@ body {
 }
 
 .tar {
-	margin: 1vw;
+	margin: 1vh;
 	text-align: right;
 	color: black;
 }
