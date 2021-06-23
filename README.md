@@ -18,26 +18,27 @@ Visually:
 The dependency structure of the code is as follows (an acyclic graph of imports):
 
 ```
-										 	 __________ Interface __________ See ARM article
+                                              __________ Interface __________ See ARM article
     App
-	|  |-----> CardHandView
+    |  |-----> CardHandView
     |            |   |--------->CardView
-	|            |               |
+    |            |               |
     |            |               |           __________ Application __________  See ARM article
   GameEngine     |               |
-    |            |				 |
+    |            |               |
     |            |               |           __________ Domain __________  See ARM article
     |            V               |           
-    |--------> CardHand			 |
+    |--------> CardHand          |
     V            |               |
-  Deck           | 				 V
+  Deck           |                  V
 (REST API)       |------------->Card      
                                  |
-								 |
+                                 |
                                  |           __________ Infrastructure __________  See ARM article
                                  |
                                utils
                                              __________ Platform __________  See ARM article
+           .     .
            .     .
            |.....|
               |
