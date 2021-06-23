@@ -30,7 +30,7 @@ The dependency structure of the code is as follows (an acyclic graph of imports)
     |            V               |           
     |--------> CardHand          |
     V            |               |
-  Deck           |                  V
+  Deck           |               V
 (REST API)       |------------->Card      
                                  |
                                  |
