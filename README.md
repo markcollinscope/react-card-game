@@ -55,7 +55,7 @@ The dependency structure of the code is as follows (an acyclic graph of imports)
 ## Discussion
 Although simple, there are design issues to consider in this application:
 * mapping cards to numeric values - should the mappting be held in Card or GameEngine (or...)?
-* should React components (CardHandView, CardView, etc) depend on Domain objects, or should they be completely detached?
+* should React components (CardHandView, CardView, etc) depend on Domain objects, or should they be completely independent of the underlying application/domain?
 
 Other points to note:
 * the REST API is hidden in the Deck object (well, as hidden as async, await allows ...)
