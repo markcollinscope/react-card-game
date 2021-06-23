@@ -13,7 +13,7 @@ The requirement for this (admittedly not very exciting) game is:
 Visually:
 * the high score at top right; 
 * card playing area below; running total of game below that
-* the application should use the "http://deckofcardsapi.com/" REST API.
+* the application should use the http://deckofcardsapi.com REST API.
 
 
 ## Source code structure
