@@ -18,7 +18,7 @@ Visually:
 
 ## Source code structure
 NB: 
-* This application was created using 'react-create-app'. 
+* This application was created using 'create-react-app'. 
 * To run it, type 'npm start' in the top level directory.
 
 The dependency structure of the code is as follows (an acyclic graph of imports):
