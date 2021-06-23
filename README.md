@@ -1,7 +1,8 @@
 # react-card-game
 
 ## Introduction
-Simple card game demonstrating basic use of React in JS. Supports the ARM article here: XXXX.
+Simple card game demonstrating basic use of React in JS. Supports the Architectural Reference Model (ARM) article 
+here: https://www.infoq.com/articles/arm-enterprise-applications/.
 
 ## Requirement
 The requirement for this (admittedly not very exciting) game is:
