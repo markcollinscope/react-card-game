@@ -12,11 +12,11 @@ The requirement for this (admittedly not very exciting) game is:
 * they can continue to do this until they 'bust' the 21 points limit.
 * at this point their 'high score' is updated with the number of cards they got *before* going bust (if greater than previous).
 * once bust, they can choose to play again if they wish, keeping the high score to date.
+
 Visually:
 * the high score at top right; 
 * card playing area below; running total of game below that
 * the application should use the http://deckofcardsapi.com REST API.
-
 
 ## Source code structure
 NB: 
