@@ -4,6 +4,8 @@
 Simple card game demonstrating basic use of React in JS. Supports the Architectural Reference Model (ARM) article 
 here: https://www.infoq.com/articles/arm-enterprise-applications/.
 
+Also plays the role of a simple application intrucing React, to those unfamiliar.
+
 ## Requirement
 The requirement for this (admittedly not very exciting) game is:
 * user should be able to 'draw' cards (values: Ace - 11, Picture cards - 10, others - face value).
