@@ -1,10 +1,10 @@
 # react-card-game
 
 ## Introduction
-Simple card game demonstrating basic use of React in JS. Supports the Architectural Reference Model (ARM) article 
-here: https://www.infoq.com/articles/arm-enterprise-applications/.
-
-Also plays the role of a simple application intrucing React, to those unfamiliar.
+Simple card game demonstrating basic use of React in JS. 
+* Supports the Architectural Reference Model (ARM) article here: https://www.infoq.com/articles/arm-enterprise-applications - as it would be used for *client-side* code. 
+* Show's simple use of fetch and await to make aync REST calls.
+* Also plays the role of a simple application introducing React in JS, to those unfamiliar.
 
 ## Requirement
 The requirement for this (admittedly not very exciting) game is:
@@ -15,13 +15,15 @@ The requirement for this (admittedly not very exciting) game is:
 
 Visually:
 * the high score at top right; 
-* card playing area below; running total of game below that
+* card playing area below; running total of game below that;
+* draw-card button below that;
 * the application should use the http://deckofcardsapi.com REST API.
 
 ## Source code structure
 NB: 
 * This application was created using 'create-react-app'. 
 * To run it, type 'npm start' in the top level directory.
+* nb: use V16 of nodejs - higher versions do not work due to an ssl-related issue (see stack-exchange - https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported).
 
 The dependency structure of the code is as follows (an acyclic graph of imports):
 
