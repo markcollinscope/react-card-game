@@ -2,11 +2,7 @@
 
 ## Introduction
 Simple card game demonstrating basic use of React in JS. 
-* Supports the Architectural Reference Model (ARM) article here: 
-```
-https://www.infoq.com/articles/arm-enterprise-applications
-```
- - as it would be used for *client-side* code. 
+* Supports the Architectural Reference Model (ARM) article here: https://www.infoq.com/articles/arm-enterprise-applications - as it would be used for *client-side* code. 
 * Show's simple use of fetch and await to make aync REST calls.
 * Also plays the role of a simple application introducing React in JS, to those unfamiliar.
 
@@ -50,7 +46,7 @@ Testing has been undertaken manually, via the browser UI.
 The dependency structure of the code is as follows (an acyclic graph of imports):
 
 ```
-                                              __________ Interface __________ See [ARM](https://www.infoq.com/articles/arm-enterprise-applications) article
+                                              __________ Interface __________ See https://www.infoq.com/articles/arm-enterprise-applications.
     App
     |  |-----> CardHandView
     |            |   |--------->CardView
