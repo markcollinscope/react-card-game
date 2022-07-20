@@ -43,10 +43,6 @@ on the command line - in top level directory.
 Testing has been undertaken manually, via the browser UI.
 
 ## Source code structure
-NB: 
-* To run it, type 'npm start' in the top level directory.
-* nb: use V16 of nodejs - 
-
 The dependency structure of the code is as follows (an acyclic graph of imports):
 
 ```
