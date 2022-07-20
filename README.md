@@ -46,15 +46,15 @@ Testing has been undertaken manually, via the browser UI.
 The dependency structure of the code is as follows (an acyclic graph of imports):
 
 ```
-                                              __________ Interface __________ See https://www.infoq.com/articles/arm-enterprise-applications.
+                                              __________ Interface __________ See ARM article (above).
     App
     |  |-----> CardHandView
     |            |   |--------->CardView
     |            |               |
-    |            |               |           __________ Application __________  See ARM article
+    |            |               |           __________ Application __________  See ARM article (above).
   GameEngine     |               |
     |            |               |
-    |            |               |           __________ Domain __________  See ARM article
+    |            |               |           __________ Domain __________  See ARM article (above).
     |            V               |           
     |--------> CardHand          |
     V            |               |
@@ -62,10 +62,10 @@ The dependency structure of the code is as follows (an acyclic graph of imports)
 (REST API)       |------------->Card      
                                  |
                                  |
-                                 |           __________ Infrastructure __________  See ARM article
+                                 |           __________ Infrastructure __________  See ARM article (above).
                                  |
                                utils
-                                             __________ Platform __________  See ARM article
+                                             __________ Platform __________  See ARM article (above).
            .     .
            .     .
            |.....|
