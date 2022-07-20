@@ -19,11 +19,33 @@ Visually:
 * draw-card button below that;
 * the application should use the http://deckofcardsapi.com REST API.
 
+## Core technology - versions (as used for testing)
+* nodejs - 16.15.0 (npm v8.5.5) - higher versions do not work due to an ssl-related issue (see stack-exchange - https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported).
+* react and other node/npm packages - see package.json
+
+This application was created using 'create-react-app'. 
+
+Note that 'node_modules' are included as part of the git source. 
+To update, run: 
+```
+npm install
+``` 
+on the command line as per normal. This should be unnecessary.
+
+## Running the application
+Type: 
+```
+npm start 
+```
+on the command line - in top level directory.
+
+## Testing
+Testing has been undertaken manually, via the browser UI.
+
 ## Source code structure
 NB: 
-* This application was created using 'create-react-app'. 
 * To run it, type 'npm start' in the top level directory.
-* nb: use V16 of nodejs - higher versions do not work due to an ssl-related issue (see stack-exchange - https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported).
+* nb: use V16 of nodejs - 
 
 The dependency structure of the code is as follows (an acyclic graph of imports):
 
