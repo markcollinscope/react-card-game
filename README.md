@@ -32,13 +32,34 @@ npm install
 ``` 
 on the command line as per normal. This should be unnecessary.
 
-## Running the application
+## Running the application - from cmd line
 Type: 
 ```
 $ cd src;
 $ npm start 
 ```
 on the command line - in top level directory.
+
+## Running the application - using Docker
+The application can be run using Docker. To build the image run:
+```
+make image
+```
+
+To run the image:
+```
+make run
+```
+This will run the application on port 3000.
+
+NB: if you don't have make - look at the Makefile for the commands to run. The line
+under the two targets mentioned above are the commands to run.
+under the lines detailed below:
+```
+image:: 
+run::
+```
+
 
 ## Testing
 Testing has been undertaken manually, via the browser UI.
