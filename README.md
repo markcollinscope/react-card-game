@@ -35,7 +35,8 @@ on the command line as per normal. This should be unnecessary.
 ## Running the application
 Type: 
 ```
-npm start 
+$ cd src;
+$ npm start 
 ```
 on the command line - in top level directory.
 
