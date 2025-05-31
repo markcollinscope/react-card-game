@@ -25,6 +25,8 @@ Visually:
 
 This application was created using 'create-react-app'. 
 
+## Install to run using 'npm start'
+### Installation
 Note that 'node_modules' are included as part of the git source. 
 To update, run: 
 ```
@@ -39,6 +41,26 @@ $ cd src;
 $ npm start 
 ```
 on the command line - in top level directory.
+
+## Using Docker
+### Build image - using Makefile
+```
+make image
+``` 
+on the command line as per normal. This should be unnecessary.
+
+## Running the image - using Makefile
+Type: 
+```
+$ make run
+```
+on the command line - in top level directory.
+
+NB: If you don't have 'make' installed, type in the command line underneath the make targets (see Makefile):
+```
+image::
+run::
+```
 
 ## Testing
 Testing has been undertaken manually, via the browser UI.
